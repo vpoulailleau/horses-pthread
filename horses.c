@@ -30,6 +30,8 @@ void *horse(void *param_pointer)
     pthread_mutex_lock(&mutex_stdout);
     vt100_move(1, y);
     printf("%.15s\n", params->name);
+    vt100_move(101, y);
+    printf("%.15s\n", params->name);
     pthread_mutex_unlock(&mutex_stdout);
 
     while (distance < 7901 && running)
